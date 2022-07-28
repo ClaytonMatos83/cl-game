@@ -33,7 +33,7 @@ class Sprite {
             )
      }
 
-     animateFrame() {
+     animateFrames() {
         this.framesElapsed++
 
         if (this.framesElapsed % this.framesHold === 0) {
@@ -47,7 +47,7 @@ class Sprite {
 
      update() {
         this.draw()
-        this.animateFrame()
+        this.animateFrames()
       
     }
 }
@@ -74,15 +74,10 @@ class Sprite {
         this.width = 50
         this.height = 150
         this.lastKey
-        this.attackBox = {
-            position: {
+        this.attackBox = {position: {
                 x: this.position.x,
                 y: this.position.y
-            },
-            offset,
-            width: 100,
-            height: 50,
-        }
+            }, offset, width: 100, height: 50,}
         this.color = color
         this.isAttacking
         this.health = 100
@@ -95,7 +90,7 @@ class Sprite {
 
     update() {
         this.draw()
-        this.animateFrame()
+        this.animateFrames()
         
         this.attackBox.position.x =this.position.x + this.attackBox.offset.x
         this.attackBox.position.y =this.position.y
